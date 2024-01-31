@@ -26,12 +26,13 @@ class MemberServiceTest {
     MemoryMemberRepository memoryMemberRepository;
 
     @BeforeEach
-    public void beforeEach(){
+    public void beforeEach() {
         memoryMemberRepository = new MemoryMemberRepository();
         memberService = new MemberService(memoryMemberRepository);
     }
+
     @AfterEach
-    public void afterEach(){
+    public void afterEach() {
         memoryMemberRepository.clearStore();
     }
 

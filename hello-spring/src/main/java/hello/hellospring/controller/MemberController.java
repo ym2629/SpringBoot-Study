@@ -6,9 +6,9 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class MemberController {
-//    //이러면 별 기능이 없는데 여러 컨테이너가 MemberService 객체를 다 선언해서 쓰게 된다
-//    //스프링 컨테이너에 등록하면 한번만 선언하면 됨
-//    private final MemberService memberService = new MemberService();
+    //    //이러면 별 기능이 없는데 여러 컨테이너가 MemberService 객체를 다 선언해서 쓰게 된다
+    //    //스프링 컨테이너에 등록하면 한번만 선언하면 됨
+    //    private final MemberService memberService = new MemberService();
     private final MemberService memberService;
 
     //@Autowired -> MemberService 를 스프링 컨테이너에서 가져옴 -> 의존성 주입이라고 함
