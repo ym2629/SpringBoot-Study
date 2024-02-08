@@ -6,7 +6,6 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-
 @Entity
 //@Table(name = "MBR") // 엔티티에서 DB에서 매핑할 테이블 이름을 지정하고 싶을 때 사용
 @SequenceGenerator(
