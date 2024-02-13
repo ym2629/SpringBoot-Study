@@ -1,10 +1,10 @@
 package jpabook.jpashop.domain;
 
+import jpabook.jpashop.domain.item.Item;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import org.springframework.boot.web.servlet.filter.OrderedRequestContextFilter;
 
 @Entity
 @Table(name = "order_item")
