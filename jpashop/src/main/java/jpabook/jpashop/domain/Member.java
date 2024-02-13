@@ -4,16 +4,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter @Setter
 public class Member {
 
-    @Id @GeneratedValue // 엔티티의 식별자로 지정
-    @Column(name = "member_id") // 데이터베이스 테이블의 컬럼 이름을 지정
+    @Id @GeneratedValue
+    @Column(name = "member_id")
     private Long id;
 
     private String name;
 
-    @Embedded // 클래스를 엔티티의 속성으로 내장하는 데 사용
+    @Embedded // @Embedded, @Embeddable 둘 중 하나만 있어도 되지만 관례상 둘 다 사용함
     private Address address;
+
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
 }
