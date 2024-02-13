@@ -1,6 +1,6 @@
 package jpabook.jpashop.web;
 
-import jpabook.jpashop.domain.Item;
+import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.service.ItemService;
 import lombok.RequiredArgsConstructor;
@@ -14,11 +14,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ItemController {
     private final ItemService itemService;
+
     @GetMapping(value = "/items/new")
     public String createForm(Model model) {
         model.addAttribute("form", new BookForm());
         return "items/createItemForm";
     }
+
     @PostMapping(value = "/items/new")
     public String create(BookForm form) {
         Book book = new Book();
@@ -52,6 +54,7 @@ public class ItemController {
         model.addAttribute("form", form);
         return "items/updateItemForm";
     }
+
     /**
      * 상품 수정
      */

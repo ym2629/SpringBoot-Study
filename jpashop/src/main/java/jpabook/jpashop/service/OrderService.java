@@ -1,13 +1,14 @@
 package jpabook.jpashop.service;
 
 import jpabook.jpashop.domain.*;
-import jpabook.jpashop.domain.Item;
+import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import jpabook.jpashop.repository.MemberRepository;
 import jpabook.jpashop.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -15,7 +16,10 @@ public class OrderService {
     private final MemberRepository memberRepository;
     private final OrderRepository orderRepository;
     private final ItemRepository itemRepository;
-    /** 주문 */
+
+    /**
+     * 주문
+     */
     @Transactional
     public Long order(Long memberId, Long itemId, int count) {
         //엔티티 조회
@@ -34,7 +38,10 @@ public class OrderService {
         orderRepository.save(order);
         return order.getId();
     }
-    /** 주문 취소 */
+
+    /**
+     * 주문 취소
+     */
     @Transactional
     public void cancelOrder(Long orderId) {
         //주문 엔티티 조회
